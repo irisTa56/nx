@@ -146,7 +146,7 @@ defmodule EXLA.MixProject do
 
     wheel_path = Path.join(xla_extension_path, "jax_metal.whl")
 
-    {_, 0} = System.shell("wget --output-document=#{wheel_path} #{wheel_url}")
+    {_, 0} = System.shell("curl -L -o #{wheel_path} #{wheel_url}")
     {_, 0} = System.shell("unzip #{wheel_path} -d #{xla_extension_path}")
 
     wheel_plugin_path =
